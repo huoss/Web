@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>H标签-P标签-Hr标签</title>
+  <style type="text/css">
+    .city {
+      list-style: none;
+    }
+    .city>li {
+      /*float: left;*/
+      background-color: lightskyblue;
+      width: 150px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+  <!-- base标签
+       专门用来统一的指定当前网页中所有的超链接（a标签）需要如何打开
+       注意点：
+       base标签必须写在head标签的开始标签和结束标签之间
+       如果既在base中制定了target又在a标签中指定了target，那么浏览器会按照a标签中指定的来执行
+  -->
+  <base target="_blank">
+</head>
+<body>
+<!--标题 h1~h6-->
+<h1>标题1</h1>
+<h2>标题2</h2>
+<h3>标题3</h3>
+<h4>标题4</h4>
+<h5>标题5</h5>
+<h6>标题6</h6>
+<!--分割线-->
+<hr>
+<!--段落-->
+<p>段落文字</p>
+<u>文字</u>
+<!--
+br标签
+格式：<br>
+作用：换行
+-->
+<!--
+img标签，不会独占一行
+格式：<img src="">
+src: 路径
+注：路径中不要出现中文，否则可能出现未知问题。相对路径不能跨盘幅
+  相对路径：
+    上级：../千亦膤.jpeg
+    同级：千亦膤.jpeg
+    下级：images/千亦膤.jpeg
+  绝对路径：/Users/yiche/Documents/hss资料/Code/Web/images/千亦膤.jpeg
+width: 宽度
+height: 高度
+title: 用于告诉浏览器，当鼠标悬停在图片上时，需要弹出的描述框中显示什么内容
+alt: 作用是当需要显示的图片找不到时显示什么内容
+-->
+<img src="images/千亦膤.jpeg" alt="">
+<img src="千亦膤.jpeg" alt="图片不存在">
+
+<!--
+什么是a标签
+a标签的作用：就是用于控制页面与页面之间跳转的
+a标签的格式：<a href="指定需要跳转的目标界面"需要展现给用户查看的内容</a>
+
+注意点：
+1. a标签不仅可以让文字可以点击，还可以让图片可以点击
+2. 一个a标签必须有一个href属性，否则a标签不知道要跳转的位置
+3. 如果通过a标签的href属性指定一个URL地址，那么必须在地址前加上http://或https://
+-->
+<a href="https://www.baidu.com">百度</a>
+<a href="https://www.baidu.com"><img src="images/千亦膤.jpeg" alt=""></a>
+<a href="images/千亦膤.jpeg">图片</a>
+
+<!--a标签
+    target属性，这个属性的作用就是专门用于控制如何跳转
+    _self：用于在当前选项卡中跳转，也就是不新建界面跳转，默认就是_self
+    _blank:用于在新的选项卡中跳转，也就是新建界面跳转
+    a标签中还有一个属性，title，和img标签中的title一样，都是用来控制鼠标悬停时显示的提示文本的
+-->
+<a href="https://www.baidu.com" target="_blank" title="提示：跳转百度首页">百度</a>
+<a href="https://www.hao123.com">新闻</a>
+<a href="http://map.baidu.com" target="_self">地图</a>
+<a href="http://v.baidu.com">视频</a>
+<a href="http://tieba.baidu.com">贴吧</a>
+<a href="http://xueshu.baidu.com">学术</a>
+<a href="http://www.baidu.com/gaoji/preferences.html">设置</a>
+<a href="http://www.baidu.com/more/">更多产品</a>
+
+<h1>顶部</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 id="center">跳转到中部</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--假链接
+    点击之后，不会跳转的链接，我们称之为假链接
+    格式：
+        1.#
+        2.javascript:
+    区别：#的假链接会自动回到网页的顶部，javascript：的假链接不会回到网页的顶部
+
+    想要通过a标签跳转到指定的位置，必须给a标签一个唯一标识，a标签才能找到需要跳转的目标位置
+    格式：
+        <h1 id="center">跳转到中部</h1>
+        <a href="#center" target="_self">点击#跳转到中部</a>
+    注意点：
+          1.通过a标签跳转到指定的位置，是没有过度动画的
+          2.还可以跳转到其他界面的指定位置
+          <a href="路径#center" target="_blank">点击#跳转其他界面的中部</a>
+-->
+<a href="#" target="_self">点击#</a>
+<a href="#center" target="_self">点击#跳转到中部</a>
+<a href="javascript:" target="_self">点击javascript:</a>
+<!--列表标签
+    作用：给一堆数据添加列表语义，表示这一堆数据是一个整体
+    分类：
+        1.无序列表（unordered list）(list item)（最多）
+         格式：
+         <ul>
+            <li></li>
+         </ul>
+         应用场景：新闻列表、商品列表、导航条
+        2.有序列表（ordered list）（最少）
+        3.定义列表（definition list）（其次）
+     注意点：
+            1.ul标签是用来给一堆数据添加语义的，不是用来添加小圆点的
+            2.ul标签和li标签是一个整体，结合使用；ul标签中不推荐包含其他标签
+
+-->
+<ul class="city">
+  <li>北京</li>
+  <li>上海</li>
+  <li>广州</li>
+  <li>武汉</li>
+  <li>天津</li>
+</ul>
+<!--无序列表练习-->
+<h1>热门新闻</h1>
+<!--
+注意点：虽然通过标签属性也能修改样式，但是开发中不推荐
+-->
+<hr width="500px" align="left">
+<ul type="circle">
+  <li>美国疫情统计现乌龙</li>
+  <li>新冠肺炎检测费用</li>
+  <li>考研国家线公布</li>
+  <li>切尔诺贝利森林大火</li>
+  <li>泰国泼水节禁止泼水</li>
+</ul>
+</body>
+</html>
