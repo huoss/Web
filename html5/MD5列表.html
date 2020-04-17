@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MD5列表</title>
+  <!--  <link rel="stylesheet" href="style.css">-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 90%;
+      height: 80%;
+      margin: 20px auto;
+      position: relative;
+    }
+    #download {
+      width: 100px;
+      height: 100px;
+      line-height:100px;
+      /*margin: 100px auto;*/
+      position: relative;
+      text-align: center;
+      background: red;
+    }
+    .download {
+      display: inline-block;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border: 1px solid #e9e9e9;
+      cellpadding: 10px;
+      /*border-collapse 属性设置表格的边框是否被合并为一个单一的边框，还是象在标准的 HTML 中那样分开显示。*/
+      /*collapse	如果可能，边框会合并为一个单一的边框。会忽略 border-spacing 和 empty-cells 属性*/
+      /*separate	默认值。边框会被分开。不会忽略 border-spacing 和 empty-cells 属性*/
+      /*inherit	规定应该从父元素继承 border-collapse 属性的值*/
+      border-collapse: collapse;
+      border-spacing: 0;
+      table-layout:fixed;
+      white-space：pre-line;
+      word-break:break-all;
+      word-wrap:break-word;
+      border-collapse:collapse;
+    }
+    th {
+      font: 14px/30px "宋体";
+      background: #dbe3fa;
+      /*background-color: #f7f7f7;*/
+      color: #5c6b77;
+      /*font-weight: 600;*/
+      width: 150px;
+    }
+    td {
+      font: 12px/28px "宋体";
+      background: white;
+    }
+    th,td {
+      border: 1px solid #99b0da;
+      padding: 0;
+      /*font: 20px/50px "curlz mt";*/
+      text-align: center;
+
+    }
+    pre {
+      text-align: left;
+      padding: 0 5px;
+      white-space:pre-wrap; /* css3.0 */
+      white-space:-moz-pre-wrap; /* Firefox */
+      /*white-space:-pre-wrap; !* Opera 4-6 *!*/
+      white-space:-o-pre-wrap; /* Opera 7 */
+      word-wrap:break-word; /* Internet Explorer 5.5+ */
+    }
+    a {
+      /*padding: 0 10px;*/
+    }
+
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+</script>
+<div class="container">
+  <table border="" cellspacing="0" cellpadding="">
+    <caption>易车APP分发流程表</caption>
+<!--    <theard>-->
+<!--      <tr>-->
+<!--        <th>-->
+<!--          -->
+<!--        </th>-->
+<!--      </tr>-->
+<!--    </theard>-->
+    <tbody>
+    <tr>
+      <th>APP版本：</th>
+      <td th:text="${data.version}">10.29.0</td>
+      <td>计划发布时间：</td>
+      <td th:text="${data.date}">2020.4.16</td>
+    </tr>
+    <tr>
+      <th>原始包名称：</th>
+      <td colspan="3" th:text="'autoeasy_' + ${data.version} + '.apk'">autoeasy_10.29.0.apk</td>
+    </tr>
+    <tr>
+      <th rowspan="4">1、上传APP文件</th>
+      <td>负责部门：</td>
+      <td colspan="2">用研</td>
+    </tr>
+    <tr>
+      <td>操作说明：</td>
+      <td colspan="2">将不同渠道的APP文件上传到分发服务器59.151.102.141</td>
+    </tr>
+    <tr>
+      <td>最晚完成时间：</td>
+      <td colspan="2">上午9:00</td>
+    </tr>
+    <tr>
+      <td>完成后签名：</td>
+      <td colspan="2">王勇  已完成(共上传1077个渠道包，附件是md5列表)</td>
+    </tr>
+
+    <tr>
+      <th rowspan="4">2、CDN预缓存</th>
+      <td>负责部门：</td>
+      <td colspan="2">IT运维</td>
+    </tr>
+    <tr>
+      <td>操作说明：</td>
+      <td colspan="2">
+        <pre>
+          1、 验证分发服务器已经将渠道包分发到6台下载服务器
+          2、 验证各下载服务器上的文件MD5是否和分发服务器一致
+          3、 验证6台下载服务器是否可以正常下载文件
+          4、 将文件进行CDN预缓存
+          5、验证CDN是否可以正常下载TOP20渠道文件
+        </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>最晚完成时间：</td>
+      <td colspan="2">中午12:00</td>
+    </tr>
+    <tr>
+      <td>完成后签名：</td>
+      <td colspan="2">王岩</td>
+    </tr>
+
+    <tr>
+      <th rowspan="4">3、刷新下载短链接</th>
+      <td>负责部门：</td>
+      <td colspan="2">产品运营</td>
+    </tr>
+    <tr>
+      <td>操作说明：</td>
+      <td colspan="2">登录APP分发后台系统，刷新下载短链接</td>
+    </tr>
+    <tr>
+      <td>最晚完成时间：</td>
+      <td colspan="2">下午5:00</td>
+    </tr>
+    <tr>
+      <td>完成后签名：</td>
+      <td colspan="2">杨曼</td>
+    </tr>
+
+    <tr>
+      <th rowspan="4">4、验证短链接下载</th>
+      <td>负责部门：</td>
+      <td colspan="2">IT运维</td>
+    </tr>
+    <tr>
+      <td>操作说明：</td>
+      <td colspan="2">验证各渠道短链接可以正常下载</td>
+    </tr>
+    <tr>
+      <td>最晚完成时间：</td>
+      <td colspan="2">下午8:00</td>
+    </tr>
+    <tr>
+      <td>完成后签名：</td>
+      <td colspan="2">王岩</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
+
+

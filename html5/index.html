@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>构建</title>
+<!--  <link rel="stylesheet" href="style.css">-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      /*width: 90%;*/
+      /*height: 80%;*/
+      /*margin: 20px auto;*/
+      /*position: relative;*/
+    }
+    #download {
+      width: 100px;
+      height: 100px;
+      line-height:100px;
+      /*margin: 100px auto;*/
+      position: relative;
+      text-align: center;
+      background: red;
+    }
+    .download {
+      display: inline-block;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border: 1px solid #e9e9e9;
+      /*border-collapse 属性设置表格的边框是否被合并为一个单一的边框，还是象在标准的 HTML 中那样分开显示。*/
+      /*collapse	如果可能，边框会合并为一个单一的边框。会忽略 border-spacing 和 empty-cells 属性*/
+      /*separate	默认值。边框会被分开。不会忽略 border-spacing 和 empty-cells 属性*/
+      /*inherit	规定应该从父元素继承 border-collapse 属性的值*/
+      border-collapse: collapse;
+      border-spacing: 0;
+      table-layout:fixed;
+      white-space：pre-line;
+      word-break:break-all;
+      word-wrap:break-word;
+      border-collapse:collapse;
+    }
+    th {
+      font: 14px/30px "宋体";
+      background: #dbe3fa;
+      /*background-color: #f7f7f7;*/
+      color: #5c6b77;
+      font-weight: 600;
+    }
+    td {
+      font: 12px/28px "宋体";
+      background: white;
+    }
+    th,td {
+      border: 1px solid #99b0da;
+      padding: 0;
+      /*font: 20px/50px "curlz mt";*/
+      text-align: center;
+
+    }
+    pre {
+      text-align: left;
+      padding: 0 5px;
+      white-space:pre-wrap; /* css3.0 */
+      white-space:-moz-pre-wrap; /* Firefox */
+      /*white-space:-pre-wrap; !* Opera 4-6 *!*/
+      white-space:-o-pre-wrap; /* Opera 7 */
+      word-wrap:break-word; /* Internet Explorer 5.5+ */
+    }
+    a {
+      /*padding: 0 10px;*/
+    }
+
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+  window.onload = function () {
+    // function codeComparisonLink(repo, currentTag, contrastTag) {
+    //   return repo + '/compare/' + currentTag + '...' + contrastTag;
+    // }
+    var box=document.getElementById("download");
+    var l=(document.documentElement.clientWidth-box.offsetWidth) / 2;
+    var t=(document.documentElement.clientHeight-box.offsetHeight) / 2;
+    box.style.left=l+'px';
+    box.style.top=t+'px';
+  }
+</script>
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>模块名称</th>
+      <th>第$次构建版本</th>
+      <th>本次构建版本</th>
+      <th>版本说明</th>
+      <th>提交者</th>
+      <th>提交日期</th>
+      <th>变动</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="data: ${data}">
+      <td th:text="${data.name}">壳工程</td>
+      <td th:text="${data.lastVersion.version}">
+        202004131539_v202004131539_548ff15a4</td>
+      <td th:text="${data.version.version}">10.29.01</td>
+      <td><pre th:text="${''}">
+1.裸车价版本回退到10.28
+2.给3d看车传h5传线索保存的手机号
+3.3d看车url decode</pre></td>
+      <td th:text="${data.createtime}">提交者</td>
+      <td th:text="${data.createtime}">2020-03-19 09:38:22</td>
+<!--      codeComparisonLink(data.repo, data.lastVersion.tag, data.version.tag)-->
+<!--      <td><a href="http://www.baidu.com" target="_blank">对比</a></td>-->
+      <td><a href="http://www.baidu.com" target="_blank">对比</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+<!--  <div th:if="${not #strings.isEmpty('')}">div</div>-->
+<!--  <p th:if="${'false'}" >如果testBoolean 是 true ，本句话就会显示</p>-->
+</div>
+<div id="download">
+<!--  <input type="button" name="" value="按钮"/>-->
+  <a class="download" href="http://www.baidu.com" target="_blank">下载</a>
+</div>
+</body>
+</html>

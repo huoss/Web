@@ -15,6 +15,38 @@
       text-align: center;
       line-height: 50px;
     }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .dl-list {
+      width: 400px;
+      height: 200px;
+      background: #ccc;
+      margin: 100px auto;
+    }
+    .dl-list>dt {
+      width: 150px;
+      height: 200px;
+      float: left;
+    }
+    .dl-list>dd {
+      width: 250px;
+      height: 200px;
+      float: right;
+    }
+    .dl-list>dd>h2 {
+      line-height: 50px;
+      color: lightskyblue;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+    .dl-list>dd>p {
+      line-height: 19px;
+      color: #000;
+      font-size: 12px;
+      margin: 0 10px;
+    }
   </style>
   <!-- base标签
        专门用来统一的指定当前网页中所有的超链接（a标签）需要如何打开
@@ -25,6 +57,7 @@
   <base target="_blank">
 </head>
 <body>
+<h1>顶部</h1>
 <!--标题 h1~h6-->
 <h1>标题1</h1>
 <h2>标题2</h2>
@@ -58,7 +91,7 @@ title: 用于告诉浏览器，当鼠标悬停在图片上时，需要弹出的�
 alt: 作用是当需要显示的图片找不到时显示什么内容
 -->
 <img src="images/千亦膤.jpeg" alt="">
-<img src="千亦膤.jpeg" alt="图片不存在">
+<!--<img src="千亦膤.jpeg" alt="图片不存在">-->
 
 <!--
 什么是a标签
@@ -89,52 +122,6 @@ a标签的格式：<a href="指定需要跳转的目标界面"需要展现给用
 <a href="http://www.baidu.com/gaoji/preferences.html">设置</a>
 <a href="http://www.baidu.com/more/">更多产品</a>
 
-<h1>顶部</h1>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1 id="center">跳转到中部</h1>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <!--假链接
     点击之后，不会跳转的链接，我们称之为假链接
     格式：
@@ -151,8 +138,9 @@ a标签的格式：<a href="指定需要跳转的目标界面"需要展现给用
           2.还可以跳转到其他界面的指定位置
           <a href="路径#center" target="_blank">点击#跳转其他界面的中部</a>
 -->
+<br>
 <a href="#" target="_self">点击#</a>
-<a href="#center" target="_self">点击#跳转到中部</a>
+<a href="#bottem" target="_self">点击#跳转到底部</a>
 <a href="javascript:" target="_self">点击javascript:</a>
 <!--列表标签
     作用：给一堆数据添加列表语义，表示这一堆数据是一个整体
@@ -162,13 +150,29 @@ a标签的格式：<a href="指定需要跳转的目标界面"需要展现给用
          <ul>
             <li></li>
          </ul>
+         作用：给一堆数据添加列表语义，数据有先后之分
          应用场景：新闻列表、商品列表、导航条
+
         2.有序列表（ordered list）（最少）
+        格式：
+        <ol>
+            <li></li>
+        </ol>
         3.定义列表（definition list）（其次）
+        dt:definition title,用来定义列表中的标题
+        dd:definition description，用来定义标题对应的描述
+        格式：
+        <dl>
+          <dt></dt>
+          <dd></dd>
+        </dl>
+       作用：网站底部的相关信息、图文混排
      注意点：
             1.ul标签是用来给一堆数据添加语义的，不是用来添加小圆点的
-            2.ul标签和li标签是一个整体，结合使用；ul标签中不推荐包含其他标签
-
+            2.ul标签和li标签是一个整体，结合使用；ul标签中不推荐包含其他标签，li标签中可以添加其他标签和ul标签
+            3.dl和dt/dd是一个整体，不会单独出现，dl中建议只放dt和dd标签；
+            一个dt可以没有对应的dd，也可以有多个对应的dd，但都不推荐，推荐是使用一个dt对应一个dd；
+            可以在dt和dd中添加其他标签
 -->
 <ul class="city">
   <li>北京</li>
@@ -190,5 +194,193 @@ a标签的格式：<a href="指定需要跳转的目标界面"需要展现给用
   <li>切尔诺贝利森林大火</li>
   <li>泰国泼水节禁止泼水</li>
 </ul>
+<!--无序列表练习-->
+<h1>四大名著</h1>
+<ul>
+  <li>
+    <h2>《三国演义》</h2>
+    <p>《三国演义》故事开始于刘备、关羽、张飞桃园三结义，结束于王浚平吴，描写了东汉末年和三国时代魏、蜀、吴三国之间的军事、政治斗争。文字浅显、人物形象刻画深刻、情节曲折、结构宏大。</p>
+  </li>
+  <li>
+    <h2>《水浒传》</h2>
+    <p>《水浒传》是由作者在《宣和遗事》及相关话本
+      《水浒传》
+      《水浒传》
+      、故事的基础上创作而成。全书以描写农民战争为主要题材，塑造了宋江、吴用、李逵、武松、林冲、鲁智深等梁山英雄，揭示了当时的社会矛盾。故事曲折、语言生动、人物性格鲜明，具有很高的艺术成就。</p>
+  </li>
+  <li>
+    <h2>《西游记》</h2>
+    <p>西游记以民间传说的唐僧取经的故事和有关话本及杂剧（元末明初杨讷作）基础上创作而成。西游记前七回叙述孙悟空出世，有大闹天宫等故事。此后写孙悟空随唐僧西天取经，沿途除妖降魔、战胜困难的故事。书中唐僧、孙悟空、猪八戒、沙僧等形象刻画生动，规模宏大，结构完整，是中国古典小说中伟大的浪漫主义文学作品。</p>
+  </li>
+  <li>
+    <h2>《红楼梦》</h2>
+    <p>红楼梦写于十八世纪中叶的清乾隆时代，内容“大旨谈情”。隋唐以前中华文化受尚古尚朴潜规则影响，没有专门研究、开示、描画心性的作品传世，而佛教却特别重视研究、开示、描写心性，有很高成就，禅宗更以“不立文字、教外别传、直指人心、见性成佛”为立宗宗旨。隋唐政权能够成立与佛教在中国迅速发展密切相关，隋唐之后，佛教对社会风气、政治生态影响仍然举足轻重。红楼梦是中国唯一一部明确以“谈情”为主旨，并且取得极高成就的小说。红楼梦所谈的情与先天之性有关，与后天学力有关，与伪相反。《易·系辞上》：“圣人立象以尽意，设卦以尽情伪。”《左传·僖公二十八年》：“晋侯在外十九年矣……民之情伪，尽知之矣。”《后汉书·耿国传》：“夷狄情伪难知，不可许。”宋·陈亮《丙午秋答朱元晦秘书书》：“天下之情伪，岂一人之智虑所能尽防哉！”清·纪昀《阅微草堂笔记·姑妄听之三》：“儒家释家，情伪日增，门径各别，可勿与辩也。”红楼梦的分旨是：类似于史记功能的《石头记》；类似于世情小说的《风月宝鉴》；类似于传奇的《金陵十二钗》；类似于见闻录的《情僧录》。多个旨意融于一书，一击两鸣，一笔多用，一言两味或者多味，在红楼梦里比比皆是。难度极高，成就极高、极大。</p>
+  </li>
+</ul>
+
+<h1>物品清单</h1>
+<!--ul>li*2>h2+ul>li*2*3   tab-->
+<ul>
+  <li>
+    <h2>蔬菜</h2>
+    <ul>
+      <li>白菜</li>
+      <li>萝卜</li>
+      <li>黄瓜</li>
+    </ul>
+  </li>
+  <li>
+    <h2>水果</h2>
+    <ul>
+      <li>苹果</li>
+      <li>桃子</li>
+      <li>香蕉</li>
+    </ul>
+  </li>
+</ul>
+<!--无序列表-->
+<ol type="A">
+  <li>教师</li>
+  <li>学生</li>
+  <li>医生</li>
+  <li>护士</li>
+</ol>
+<!--定义列表-->
+<dl>
+  <dt>北京</dt>
+  <dd>中国的首都</dd>
+  <dt>大连</dt>
+  <dd>美丽的城市</dd>
+</dl>
+<!--dl>dt+dd-->
+<dl class="dl-list">
+  <dt>
+    <img src="images/千亦膤.jpeg" width="150px" height="200px">
+  </dt>
+  <dd>
+    <h2>千亦膤</h2>
+    <p>千亦膤，国漫动画《墓王之王》及其衍生作品角色。 [1]  《墓王之王寒铁斗》中的登场人物，攻墓派无情谷回岸观最出色的弟子之一，师从静尘、静逸二位师太，因患有眼疾自小便苦练以守代攻的花语剑法。 她虽眼中无物，心中却通透清明，听音辩向能力过人，剑法超群。“花语剑下无一物，千军难过彼岸池。”</p>
+  </dd>
+</dl>
+<!--
+表格标签
+table:表格
+capption:表格标题，自动居中
+thead:指定表格的表头信息
+tbody:指定表格的主体信息
+tfoot:指定表格的附加信息
+th:标题单元格标签，自动居中+加粗
+tr:表格中的一行
+td:表格的一行中的一个单元格
+1.表格的标题
+2.表格的表头信息
+3.表格的主体信息
+4.表格的页尾信息
+格式：
+  <table>
+  <caption>表格的标题</caption>
+  <thead>
+    <tr>
+      <th>每一列的标题</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>数据</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td>表格的尾部</td>
+  </tr>
+  </tfoot>
+</table>
+  属性：
+    1.宽度和高度（table/td）,默认是按照img内容的尺寸来调整的。td设置宽高，会修改当前单元格，不会影响整个表格的宽度和高度
+    2.水平对齐（table/tr/td）和垂直对齐（tr/td）
+    3.外边框(单元格和单元格之间的距离,默认是2px)和内边框（单元格边框和内容之间的间距, 默认是1px）（table）
+    4.细线表格:
+              给table标签设置bgcolor
+              给tr标签设置bgcolor
+              给table标签设置cellspacing=“1px”
+
+作用：给一堆数据添加表格语义，表格是一种数据的展现形式，数据量很大时候，展现比较清晰
+注意点：
+  表格标签有一个边框属性，这个属性决定了边框的宽度，默认情况下这个属性的值是0，所以默认看不到边框
+  表格标签也是一个组合标签 table/tr/td
+  如果我们没有编写tbody，系统会自动添加tbody
+  thead和tfoot有自己的默认高度，不会随表格的高度变化
+
+  问题：table的水平对齐、内边框无效
+-->
+<table border="1px" width="500px" height="300px">
+  <caption>学生信息</caption>
+  <thead>
+  <tr>
+    <th>姓名</th>
+    <th>年龄</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>lucy</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>clover</td>
+    <td>28</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td>2</td>
+    <td>23</td>
+  </tr>
+  </tfoot>
+</table>
+<!--<table border="1" width="500px" height="300px" align="center" cellspacing="10" cellpadding="50">-->
+<!--细线表格-->
+<table bgcolor="black" cellspacing="1px">
+  <tr align="center" bgcolor="white">
+    <td width="200px" height="50px">1.1</td>
+    <td align="right">1.2</td>
+    <td>1.3</td>
+  </tr>
+  <tr valign="top" bgcolor="white">
+    <td valign="bottom">2.1</td>
+    <td>2.2</td>
+    <td>2.3</td>
+  </tr>
+</table>
+<!--表格标签的其他标签-->
+
+<table bgcolor="#6495ed" cellspacing="1px" width="800px">
+  <caption>
+    <h2>今日小说排行榜</h2>
+  </caption>
+  <tr bgcolor="#87cefa">
+    <th>排名</th>
+    <th>关键词</th>
+    <th>趋势</th>
+    <th>今日搜索</th>
+    <th>最近七日</th>
+    <th>相关链接</th>
+  </tr>
+  <tr bgcolor="white" align="center">
+    <td>1</td>
+    <td align="left">暴走大事件</td>
+    <td>
+      <img src="images/千亦膤.jpeg" width="150px">
+    </td>
+    <td>1000</td>
+    <td>20000</td>
+    <td>
+      <a href="#">贴吧</a>
+      <a href="#">图片</a>
+      <a href="#">百科</a>
+    </td>
+  </tr>
+</table>
+<h1 id="bottem">底部</h1>
 </body>
 </html>
